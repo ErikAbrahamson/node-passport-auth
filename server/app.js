@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 var swig = require('swig');
 
 // *** mongoose connection to mongodb *** //
-mongoose.connect('mongodb://localhost/passport_local_mongoose_express4');
+mongoose.connect('mongodb://localhost/passport-exercise');
 
 // *** routes *** //
 var routes = require('./routes/index.js');

@@ -35,8 +35,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client/public')));
 
-// *** main routes *** //
-app.use('/', routes);
+
 
 // *** passport init *** //
 app.use(passport.initialize());
@@ -46,6 +45,9 @@ var Account = require('./models/account');
 passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
+
+// *** main routes *** //
+app.use('/', routes);
 
 
 // catch 404 and forward to error handler
